@@ -1,0 +1,3 @@
+﻿  Game_Live.cpp
+C:\Users\admin\source\repos\Game_Live\Game_Live\Game_Live.cpp(161,1): warning C4715: print_field: значение возвращается не при всех путях выполнения
+  Game_Live.vcxproj -> C:\Users\admin\source\repos\Game_Live\x64\Debug\Game_Live.exe
