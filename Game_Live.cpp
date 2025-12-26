@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout);
+void print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout);
 
 char** create_arr(int row, int coll)
 {
@@ -102,7 +102,7 @@ void new_live(int row, int coll, char** arr, char** h_arr, int generation, ofstr
     print_field(row, coll, arr, h_arr, generation, fout);
 }
 
-int print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout)
+void print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout)
 {
     
     int all_quantity_live = 0; 
@@ -198,7 +198,9 @@ int main(int argc, char** argv)
 
     for (int i = 0; i < row; i++)
     {
-        delete arr[i], h_arr[i];
+        delete[] arr[i];
+        delete[] h_arr[i];
     }
-    delete[] arr, h_arr;
+    delete[] arr;
+    delete[] h_arr;
 }
