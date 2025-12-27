@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout);
+void print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout);
 
 char** create_arr(int row, int coll)
 {
@@ -102,7 +102,7 @@ void new_live(int row, int coll, char** arr, char** h_arr, int generation, ofstr
     print_field(row, coll, arr, h_arr, generation, fout);
 }
 
-int print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout)
+void print_field(int row, int coll, char** arr, char** h_arr, int& generation, ofstream& fout)
 {
     
     int all_quantity_live = 0; 
@@ -143,12 +143,12 @@ int print_field(int row, int coll, char** arr, char** h_arr, int& generation, of
     if (all_quantity_live == 0)
     {
         cout << " All cells are dead. Game over! " << endl;
-        return 0;
+        return;
     }
     else if (history_points == all_quantity_live)
     {
         cout << " The world has stagnated. Game over! " << endl;
-        return 0;
+        return;
     }
 
     Sleep(1000);
